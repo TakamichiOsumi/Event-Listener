@@ -7,7 +7,7 @@ all: $(PROGRAM) udp_server udp_client
 $(PROGRAM): network_utils.o
 	$(CC) $(CFLAGS) event_listener.c $< -o $@
 
-network_utils.o: network_utils.c
+network_utils.o:
 	$(CC) $(CFLAGS) -c network_utils.c
 
 udp_server: network_utils.o

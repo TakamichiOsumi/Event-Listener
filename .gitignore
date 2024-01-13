@@ -1,7 +1,8 @@
 *.o
 
-server
-client
+udp_client
+udp_server
+event_listener
 
 GRTAGS
 GPATH

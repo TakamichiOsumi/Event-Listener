@@ -19,14 +19,14 @@ typedef struct udp_listener_args {
     udp_react_function_cb func_cb;
 } udp_listener_args;
 
-void
+static void
 udp_react_fn(char *msg, uint32_t msg_size,
 	     char *sender_ip, uint32_t port_no){
     printf("%s() : msg = '%s', msg size = %u\n",
 	   __FUNCTION__, msg, msg_size);
 }
 
-void *
+static void *
 udp_listener_main(void *args){
     udp_listener_args *ulargs = args;
     int udp_sock_fd;
@@ -60,7 +60,7 @@ udp_listener_main(void *args){
     return NULL;
 }
 
-pthread_t *
+static pthread_t *
 udp_server_thread_launch(char *ip, int port_no,
 			 udp_react_function_cb func_cb){
     pthread_attr_t attr;

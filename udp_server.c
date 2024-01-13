@@ -7,7 +7,7 @@
 #define FD_SIZE 32
 static int target_fd_set[FD_SIZE];
 
-void
+static void
 init_fd_set(void){
     int i;
 
@@ -16,7 +16,7 @@ init_fd_set(void){
     }
 }
 
-void
+static void
 add_fd_set(int new_fd){
     int i;
 
@@ -28,7 +28,7 @@ add_fd_set(int new_fd){
     }
 }
 
-int
+static int
 get_max_fd(void){
     int i, max = -1;
 
@@ -40,7 +40,7 @@ get_max_fd(void){
     return max;
 }
 
-void
+static void
 re_init_readfds(fd_set *fdp){
     int i;
 
